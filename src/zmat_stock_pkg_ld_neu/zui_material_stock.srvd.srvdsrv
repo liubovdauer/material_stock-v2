@@ -1,0 +1,4 @@
+@EndUserText.label: 'MATERIAL_STOCK'
+define service ZUI_MATERIAL_STOCK {
+  expose ZCE_MATERIAL_STOCK;
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition für MATERIAL_STOCK'
+define service ZSD_MATERIAL_STOCK {
+  expose ZC_MATERIAL_STOCK as MaterialStock;
+}

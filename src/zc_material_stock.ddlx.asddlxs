@@ -1,0 +1,53 @@
+@Metadata.layer: #CORE
+
+annotate entity ZC_MATERIAL_STOCK with
+{
+  @UI.facet: [{
+    id:       'MaterialStock',
+    type:     #IDENTIFICATION_REFERENCE,
+    label:    'Material Stock',
+    position: 10
+  }]
+
+  @UI: {
+    lineItem:       [{ position: 10, label: 'Material' }],
+    identification: [{ position: 10, label: 'Material' }]
+  }
+  Material;
+
+  @UI: {
+    lineItem:       [{ position: 20, label: 'Plant' }],
+    identification: [{ position: 20, label: 'Plant' }]
+  }
+  Plant;
+
+  @UI: {
+    lineItem:       [{ position: 30, label: 'Storage Location' }],
+    identification: [{ position: 30, label: 'Storage Location' }]
+  }
+  StorageLocation;
+
+  @UI: {
+    lineItem:       [{ position: 40, label: 'Batch' }],
+    identification: [{ position: 40, label: 'Batch' }]
+  }
+  Batch;
+
+  @UI: {
+    lineItem:       [{ position: 50, label: 'MRP Area' }],
+    identification: [{ position: 50, label: 'MRP Area' }]
+  }
+  MrpArea;
+
+  @UI: {
+    lineItem:       [{ position: 60, label: 'Material Base Unit' }],
+    identification: [{ position: 60, label: 'Material Base Unit' }]
+  }
+  MaterialBaseUnit;
+
+  @UI: {
+    lineItem:       [{ position: 70, label: 'Stock Quantity' }],
+    identification: [{ position: 70, label: 'Stock Quantity' }]
+  }
+  StockQuantity;
+}

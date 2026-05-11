@@ -1,0 +1,27 @@
+unmanaged implementation in class zbp_i_material_stock unique;
+strict ( 2 );
+
+define behavior for ZI_MATERIAL_STOCK alias MaterialStock
+lock master
+authorization master ( global )
+{
+  field ( readonly ) Material, Plant, StorageLocation, Batch,
+                     MrpArea, MaterialBaseUnit, StockQuantity,
+                     LastChangedDateTime;
+
+  create;
+  update;
+  delete;
+
+  mapping for zmat_stock
+  {
+    Material            = material;
+    Plant               = plant;
+    StorageLocation     = storage_location;
+    Batch               = batch;
+    MrpArea             = mrp_area;
+    MaterialBaseUnit    = material_base_unit;
+    StockQuantity       = stock_qty;
+    LastChangedDateTime = last_changed_datetime;
+  }
+}

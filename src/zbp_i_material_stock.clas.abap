@@ -1,0 +1,5 @@
+CLASS zbp_i_material_stock DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_material_stock.
+ENDCLASS.
+
+CLASS zbp_i_material_stock IMPLEMENTATION.
+ENDCLASS.
