@@ -36,7 +36,9 @@ CLASS zcl_material_stock_api DEFINITION
 ENDCLASS.
 
 
-CLASS zcl_material_stock_api IMPLEMENTATION.
+
+CLASS ZCL_MATERIAL_STOCK_API IMPLEMENTATION.
+
 
   METHOD get_material_stock.
 
@@ -101,5 +103,4 @@ CLASS zcl_material_stock_api IMPLEMENTATION.
     COMMIT WORK.
 
   ENDMETHOD.
-
 ENDCLASS.

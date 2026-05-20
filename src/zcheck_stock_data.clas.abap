@@ -8,7 +8,10 @@ CLASS zcheck_stock_data DEFINITION
 
 ENDCLASS.
 
-CLASS zcheck_stock_data IMPLEMENTATION.
+
+
+CLASS ZCHECK_STOCK_DATA IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
 
@@ -26,5 +29,4 @@ CLASS zcheck_stock_data IMPLEMENTATION.
     ENDIF.
 
   ENDMETHOD.
-
 ENDCLASS.

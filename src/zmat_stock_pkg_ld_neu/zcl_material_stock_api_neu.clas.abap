@@ -2,44 +2,50 @@ CLASS zcl_material_stock_api_neu DEFINITION
   PUBLIC FINAL CREATE PUBLIC.
 
   PUBLIC SECTION.
+    INTERFACES zif_material_stock_api.
 
-    TYPES:
-      BEGIN OF ty_material_stock,
-        material        TYPE string,
-        plant           TYPE string,
-        storagelocation TYPE string,
-        batch           TYPE string,
-        mrparea         TYPE string,
-        materialbaseunit TYPE string,
-        matlwrhsstkqtyinmatlbaseunit TYPE string,
-      END OF ty_material_stock,
-      tt_material_stock TYPE STANDARD TABLE OF ty_material_stock WITH DEFAULT KEY.
+    " Typen vom Interface verwenden (Alias)
+    ALIASES tt_material_stock FOR zif_material_stock_api~tt_material_stock.
+    ALIASES ty_material_stock FOR zif_material_stock_api~ty_material_stock.
 
-    TYPES:
-      BEGIN OF ty_results_wrapper,
-        results TYPE tt_material_stock,
-      END OF ty_results_wrapper.
-
-    TYPES:
-      BEGIN OF ty_d_wrapper,
-        d TYPE ty_results_wrapper,
-      END OF ty_d_wrapper.
-
-    METHODS get_material_stock
-      IMPORTING
-        iv_apikey        TYPE string
-      RETURNING
-        VALUE(rt_stock)  TYPE tt_material_stock
-      RAISING
-        zcx_material_stock_error.
+*    TYPES:
+*      BEGIN OF ty_material_stock,
+*        material        TYPE string,
+*        plant           TYPE string,
+*        storagelocation TYPE string,
+*        batch           TYPE string,
+*        mrparea         TYPE string,
+*        materialbaseunit TYPE string,
+*        matlwrhsstkqtyinmatlbaseunit TYPE string,
+*      END OF ty_material_stock,
+*      tt_material_stock TYPE STANDARD TABLE OF ty_material_stock WITH DEFAULT KEY.
+*
+*    TYPES:
+*      BEGIN OF ty_results_wrapper,
+*        results TYPE tt_material_stock,
+*      END OF ty_results_wrapper.
+*
+*    TYPES:
+*      BEGIN OF ty_d_wrapper,
+*        d TYPE ty_results_wrapper,
+*      END OF ty_d_wrapper.
+*
+*    METHODS get_material_stock
+*      IMPORTING
+*        iv_apikey        TYPE string
+*      RETURNING
+*        VALUE(rt_stock)  TYPE tt_material_stock
+*      RAISING
+*        zcx_material_stock_error.
 
 ENDCLASS.
 
 
 
-CLASS zcl_material_stock_api_neu IMPLEMENTATION.
+CLASS ZCL_MATERIAL_STOCK_API_NEU IMPLEMENTATION.
 
-   METHOD get_material_stock.
+
+   METHOD zif_material_stock_api~get_material_stock.
 
     TRY.
 
@@ -73,7 +79,7 @@ CLASS zcl_material_stock_api_neu IMPLEMENTATION.
         DATA(lv_body) = lo_response->get_text( ).
 
         " JSON -> ABAP
-        DATA ls_result TYPE ty_d_wrapper.
+        DATA ls_result TYPE zif_material_stock_api~ty_d_wrapper.
 
         /ui2/cl_json=>deserialize(
           EXPORTING
@@ -93,5 +99,4 @@ CLASS zcl_material_stock_api_neu IMPLEMENTATION.
     ENDTRY.
 
   ENDMETHOD.
-
 ENDCLASS.

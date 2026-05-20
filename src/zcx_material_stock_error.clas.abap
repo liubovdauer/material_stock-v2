@@ -11,7 +11,11 @@ CLASS zcx_material_stock_error DEFINITION
 
 ENDCLASS.
 
-CLASS zcx_material_stock_error IMPLEMENTATION.
+
+
+CLASS ZCX_MATERIAL_STOCK_ERROR IMPLEMENTATION.
+
+
   METHOD constructor ##ADT_SUPPRESS_GENERATION.
     SUPER->constructor(
       previous = previous

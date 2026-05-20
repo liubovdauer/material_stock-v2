@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS ztest_material_query IMPLEMENTATION.
+CLASS ZTEST_MATERIAL_QUERY IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

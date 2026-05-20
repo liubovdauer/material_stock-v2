@@ -4,10 +4,27 @@ CLASS zcl_material_stock_query DEFINITION
   PUBLIC SECTION.
     INTERFACES if_rap_query_provider.
 
+    " Konstruktor nimmt API-Instanz entgegen
+    METHODS constructor
+      IMPORTING io_api TYPE REF TO zif_material_stock_api OPTIONAL.
+  PRIVATE SECTION.
+    DATA mo_api TYPE REF TO zif_material_stock_api.
 ENDCLASS.
 
 
-CLASS zcl_material_stock_query IMPLEMENTATION.
+
+CLASS ZCL_MATERIAL_STOCK_QUERY IMPLEMENTATION.
+
+  METHOD constructor.
+   IF io_api IS BOUND.
+   " Test: Mock-Instanz verwenden
+      mo_api = io_api.
+    ELSE.
+      " Produktion: echte API-Instanz erstellen
+      mo_api = NEW zcl_material_stock_api_neu( ).
+    ENDIF.
+  ENDMETHOD.
+
 
   METHOD if_rap_query_provider~select.
 
@@ -15,9 +32,9 @@ CLASS zcl_material_stock_query IMPLEMENTATION.
 
     " ── API aufrufen ────────────────────────────────────────────────────
     TRY.
-        DATA(lo_api) = NEW zcl_material_stock_api_neu( ).
+*        DATA(lo_api) = NEW zcl_material_stock_api_neu( ).
 
-        DATA(lt_stock) = lo_api->get_material_stock(
+        DATA(lt_stock) = mo_api->get_material_stock(
           iv_apikey = 'YpVVCZgbzmnQ3AazGaZIxYamnD5qcpOO'
         ).
 
@@ -75,5 +92,4 @@ CLASS zcl_material_stock_query IMPLEMENTATION.
     io_response->set_data( lt_paged ).
 
   ENDMETHOD.
-
 ENDCLASS.

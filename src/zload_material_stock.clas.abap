@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zload_material_stock IMPLEMENTATION.
+CLASS ZLOAD_MATERIAL_STOCK IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.
