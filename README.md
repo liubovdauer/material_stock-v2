@@ -4,15 +4,13 @@ die die SAP S/4HANA Cloud Material Stock API per HTTP aufruft,
 die Daten in einem ABAP-Service verarbeitet und als OData V4 Service exponiert, 
 der entweder über Fiori Elements oder einen externen HTTP-Client konsumiert werden kann.
 
-Ich habe: einen API Client (ZCL_MATERIAL_STOCK_API_NEU) implementiert, 
+Es wurde: 
+- einen API Client (ZCL_MATERIAL_STOCK_API_NEU) implementiert, 
 der per HTTP die SAP Sandbox API aufruft und die JSON-Antwort in eine ABAP-Tabelle deserialisiert. 
-Einen Query Handler (ZCL_MATERIAL_STOCK_QUERY) der das Interface IF_RAP_QUERY_PROVIDER implementiert und 
-beim Fiori-Aufruf automatisch den API Client aufruft, 
-die Ergebnisse in den Custom Entity Typ konvertiert und mit Paging an Fiori zurückgibt. 
+- Einen Query Handler (ZCL_MATERIAL_STOCK_QUERY) der das Interface IF_RAP_QUERY_PROVIDER implementiert und beim Fiori-Aufruf automatisch den API Client aufruft, die Ergebnisse in den Custom Entity Typ konvertiert und mit Paging an Fiori zurückgibt. 
 
-Eine CDS Custom Entity (ZCE_MATERIAL_STOCK) die das Datenschema definiert und den Query Handler referenziert. 
-Eine Service Definition (ZUI_MATERIAL_STOCK) die die Custom Entity exponiert und 
-ein Service Binding (ZSB_MATERIAL_STOCK_NEU) das den OData V4 Service für Fiori bereitstellt.
+- Eine CDS Custom Entity (ZCE_MATERIAL_STOCK) die das Datenschema definiert und den Query Handler referenziert. 
+- Eine Service Definition (ZUI_MATERIAL_STOCK) die die Custom Entity exponiert und ein Service Binding (ZSB_MATERIAL_STOCK_NEU) das den OData V4 Service für Fiori bereitstellt.
 The Task
 Create an SAP BTP Trial account and activate the ABAP Environment (free tier).
 Using ABAP Development Tools (ADT) in Eclipse, create your own package and implement a custom ABAP class that calls the SAP S/4HANA Cloud Material Stock API sandbox and reads material stock data:
