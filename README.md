@@ -94,20 +94,6 @@ Dieses Projekt implementiert eine vollständige End-to-End Integration auf der *
 
 ---
 
-## Screenshots
-
-> Screenshots befinden sich im Ordner `docs/screenshots/`.
-
-### Fiori Elements List Report
-
-<!-- ![Fiori List Report](docs/screenshots/fiori-list-report.png) -->
-
-### OData V4 Service Response (Postman / Bruno)
-
-<!-- ![HTTP Client](docs/screenshots/http-client-response.png) -->
-
----
-
 ## Artefakte
 
 | Artefakt | Typ | Beschreibung |
