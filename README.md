@@ -49,30 +49,30 @@ Dieses Projekt implementiert eine vollständige End-to-End Integration auf der *
 ## Architektur
 
 ```
-┌─────────────────────┐  ┌─────────────────────┐  
+┌─────────────────────┐  ┌──────────────────────┐  
 │   SAP Fiori         │  │ Externer HTTP-Client │  
 │   Elements          │  │ Postman·curl·Bruno   │  
 │   List Report +     │  │                      │  
 │   Object Page       │  │                      │  
 └──────────┬──────────┘  └──────────┬───────────┘  
            │                        │                       
-┌──────────▼──────────┐  ┌──────────▼─────────────────────────────────┐
-│ ZSB_MATERIAL_STOCK  │  │         ZSB_MATERIAL_STOCK_API              │
-│ OData V4 · UI       │  │         OData V4 · API                      │
+┌──────────▼──────────┐  ┌──────────▼────────────────────────────────┐
+│ ZSB_MATERIAL_STOCK  │  │         ZSB_MATERIAL_STOCK_API            │
+│ OData V4 · UI       │  │         OData V4 · API                    │
 └──────────┬──────────┘  └──────────────────────┬────────────────────┘
            └──────────────────────┬─────────────┘
                                   │
                     ┌─────────────▼──────────────┐
-                    │     ZSD_MATERIAL_STOCK      │
-                    │     Service Definition      │
-                    └──────┬──────────────────────┘
+                    │     ZSD_MATERIAL_STOCK     │
+                    │     Service Definition     │
+                    └──────┬─────────────────────┘
                            │
-            ┌──────────────▼──────────────────────────┐
+            ┌──────────────▼───────────────────────────┐
             │ ZC_MATERIAL_STOCK   ZI_MATERIAL_STOCK    │
             │ Projection View  +  Root View Entity     │
             │ Metadata Ext.    +  Behavior Definition  │
             │                  +  ZBP_I (Behavior Impl)│
-            └──────────────┬──────────────────────────┘
+            └──────────────┬───────────────────────────┘
                            │
           ┌────────────────┼──────────────────────────┐
           │                │                          │
