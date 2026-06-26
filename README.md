@@ -53,32 +53,32 @@ Dieses Projekt implementiert eine vollständige End-to-End Integration auf der *
              └──────────────┬─────────────────┘
                             │ OData V4
              ┌──────────────▼─────────────────┐
-             │     ZSB_MATERIAL_STOCK_NEU      │
-             │  OData V4 Service Binding       │
-             │  ZUI_MATERIAL_STOCK (Def.)      │
+             │     ZSB_MATERIAL_STOCK_NEU     │
+             │  OData V4 Service Binding      │
+             │  ZUI_MATERIAL_STOCK (Def.)     │
              └──────────────┬─────────────────┘
                             │
              ┌──────────────▼─────────────────┐
-             │       ZCE_MATERIAL_STOCK        │
-             │       CDS Custom Entity         │
+             │       ZCE_MATERIAL_STOCK       │
+             │       CDS Custom Entity        │
              └──────────────┬─────────────────┘
                             │ referenziert
              ┌──────────────▼─────────────────┐
-             │    ZCL_MATERIAL_STOCK_QUERY     │
-             │    IF_RAP_QUERY_PROVIDER        │
-             │    Paging + Konvertierung       │
+             │    ZCL_MATERIAL_STOCK_QUERY    │
+             │    IF_RAP_QUERY_PROVIDER       │
+             │    Paging + Konvertierung      │
              └──────────────┬─────────────────┘
                             │ HTTP-Aufruf
              ┌──────────────▼─────────────────┐
-             │   ZCL_MATERIAL_STOCK_API_NEU    │
-             │   API Client · JSON Deseri.     │
+             │   ZCL_MATERIAL_STOCK_API_NEU   │
+             │   API Client · JSON Deseri.    │
              └──────────────┬─────────────────┘
                             │ GET /A_MaterialStock
                             │ APIKey Header
              ┌──────────────▼─────────────────┐
-             │  SAP S/4HANA Cloud API Sandbox  │
-             │  sandbox.api.sap.com · OData V2 │
-             └─────────────────────────────────┘
+             │  SAP S/4HANA Cloud API Sandbox │
+             │  sandbox.api.sap.com · OData V2│
+             └────────────────────────────────┘
 ```
 
 ---
